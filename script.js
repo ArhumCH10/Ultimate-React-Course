@@ -158,7 +158,28 @@ console.log(title, author, genres);
 // const primary = genres[0];
 // const secondary = genres[1];
 
-const [primary, secondary] = genres;
+const [primary, secondary, ...other] = genres;
 
 primary;
 secondary;
+other;
+
+//spread objects / arrays
+
+// arrays spread
+
+const newGeneres = [" epic fantasy", "Arhum", ...genres];
+
+newGeneres;
+
+// spread objects
+
+const newBook = {
+  ...book,
+  // Adding a new Property
+  moviePublicationDate: "2024-05-18",
+  // Overrinting an existing property
+  pages: "1201",
+};
+
+newBook;
