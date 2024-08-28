@@ -44,7 +44,7 @@ const data = [
       "short stories",
       "fantasy",
     ],
-    hasMovieAdaptation: false,
+    hasMovieAdaptation: false, // boolean
     pages: 295,
     translations: {},
     reviews: {
@@ -112,7 +112,7 @@ const data = [
     publicationDate: "1996-08-01",
     author: "George R. R. Martin",
     genres: ["fantasy", "high-fantasy", "novel", "fantasy fiction"],
-    hasMovieAdaptation: true,
+    hasMovieAdaptation: false,
     pages: 835,
     translations: {
       korean: "왕좌의 게임",
@@ -142,44 +142,3 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-
-// Destructuring
-
-const book = getBook(2);
-
-const publicationDate = book.publicationDate;
-
-publicationDate;
-
-const { title, author, genres } = book;
-
-console.log(title, author, genres);
-
-// const primary = genres[0];
-// const secondary = genres[1];
-
-const [primary, secondary, ...other] = genres;
-
-primary;
-secondary;
-other;
-
-//spread objects / arrays
-
-// arrays spread
-
-const newGeneres = [" epic fantasy", "Arhum", ...genres];
-
-newGeneres;
-
-// spread objects
-
-const newBook = {
-  ...book,
-  // Adding a new Property
-  moviePublicationDate: "2024-05-18",
-  // Overrinting an existing property
-  pages: "1201",
-};
-
-newBook;
